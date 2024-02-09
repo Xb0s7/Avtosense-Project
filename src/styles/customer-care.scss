@@ -1,0 +1,90 @@
+.customer-care-section {
+    @extend %layout;
+    min-height: 30vh;
+    max-width: 1920px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .card-wrap {
+        width: 30%;
+        min-width: 250px;
+        max-height: 220px;
+        background: #111111;
+        border-radius: 14px;
+        position: relative;
+        overflow: hidden;
+        align-self: stretch;
+        color: var(--color-text);
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        pointer-events: none;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .card-header {
+        background: rgb(226, 0, 0);
+        background: linear-gradient(180deg, rgba(226, 0, 0, 1) 0%, rgba(36, 36, 36, 1) 96%);
+
+        &::before {
+            content: '';
+            width: 70px;
+            position: absolute;
+            background-color: #1d1c1c;
+            transform: translate(0%, 0%);
+            border-radius: 100%;
+            height: 70px;
+        }
+
+        width: 100%;
+        border-radius: 100% 0% 100% 100% / 0% 50% 50% 50%;
+        display: grid;
+        place-items: center;
+
+        i {
+            color: #fff;
+            font-size: 72px;
+        }
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .card-title {
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .card-text {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    
+    .wrenchLottie {
+        transform: scale(2) !important;
+    }
+    
+    .clockLottie {
+        padding: 10px;
+    }
+    
+    .starLottie {
+        transform: scale(2) !important;
+    }
+    
+    @media (max-width: 1024px) {
+        padding: 0px 20px 0px 0px;
+    }
+}

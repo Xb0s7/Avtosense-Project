@@ -1,0 +1,189 @@
+.intro-section {
+    @extend %layout;
+    height: 600px;
+
+    .intro-button {
+        background-color: rgb(236, 5, 5);
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+        margin-top: 30px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-family: inherit;
+        &:hover {
+            background-color: rgba(255, 0, 0, 0.725);
+        }
+        p {
+            margin: 0;
+            padding: 10px 10px;
+        }
+    }
+
+    .slide-content {
+        height: 100%;
+        border-radius: 10px;
+    }
+    .content-container {
+        border-radius: 10px 0px 0px 10px;
+        display: flex;
+        align-items: center;
+        width: 500px;
+        flex-direction: column;
+        // flex-direction: column;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        
+        h2 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            color: white;
+            text-align: left;
+            line-height: 50px;
+            font-weight: 400;
+            font-size: 44px;
+            color: rgb(236, 5, 5);
+            p{
+                width: 100%;
+                padding-left: 30px;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+.logo-big {
+    width: 95%;
+}
+
+.customer-care-section {
+    display: flex;
+    .container {
+        display: flex;
+        width: 100%;
+    }
+}
+
+.banner-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    color: #bdbec0;
+    text-align: center;
+    background-image: url('../assets/home-background.jpg');
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    .home-banner {
+        width: 100%;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        // &::after {
+        //     content: '';
+        //     position: absolute;
+
+        //     /* size */
+        //     width: 100%;
+        //     height: 40px;
+
+        //     /* center horizontaly */
+        //     left: 0;
+        //     transform: translateY(50%);
+        //     z-index: 1;
+        //     /* place verticaly */
+        //     bottom: 0;
+
+        //     border-radius: 50%; /* circle magic */
+
+        //     border-top: 2px solid black;
+        //     background-color: #111111;
+        // }
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+
+        //     /* size */
+        //     width: 100%;
+        //     height: 40px;
+
+        //     /* center horizontaly */
+        //     left: 0;
+        //     transform: translateY(-50%);
+
+        //     /* place verticaly */
+        //     top: 0;
+
+        //     border-radius: 50%; /* circle magic */
+
+        //     border-bottom: 2px solid black;
+        //     background-color: #111111;
+        // }
+    }
+
+    // .banner {
+    //     display: flex;
+    //     justify-content: center;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     height: 100%;
+    //     h2 {
+    //         padding: 0px 40px;
+    //     }
+    // }
+}
+
+    // .swiper {
+    //     height: 100%;
+    //     min-height: 70vh;
+    // }
+
+    // .swiper-slide {
+    //     display: flex;
+    //     justify-content: center;
+    //     height: 100%;
+    //     background-repeat: no-repeat;
+    //     background-position: center center;
+    //     background-size: cover;
+    //     .slide-content {
+    //         min-height: 70vh;
+    //     }
+    //     &.first {
+    //         .slide-content {
+    //             width: 100%;
+    //             display: flex;
+    //             flex-direction: column;
+    //             align-items: center;
+    //             justify-content: center;
+    //             color: #bdbec0;
+    //             text-align: center;
+    //             h1 {
+    //                 font-size: 40px;
+    //             }
+    //             h2 {
+    //                 width: 75%;
+    //                 line-height: 50px;
+    //             }
+    //         }
+    //     }
+    //     &.second {
+    //         background-image: url('../assets/pikwizard-98f8d41156b22e37ab07d66350ccde5a.jpg');
+    //     }
+    //     &.third {
+    //         background-image: url('../assets/pexels-audrius-strikaitis-10903097.jpg');
+    //     }
+    //     @media (max-width: 1024px) {
+    //         min-height: 75vh;
+    //     }
+    // }
+
+    // .swiper-button-prev {
+    //     color: red;
+    // }
+    // .swiper-button-next {
+    //     color: red;
+    // }

@@ -1,0 +1,206 @@
+.services-section {
+    @extend %layout;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    max-width: 1920px;
+    max-height: calc(100% - 100px);
+    color: white;
+
+    .header {
+        font-size: 40px;
+        padding: 20px 0px;
+        z-index: 1;
+    }
+
+    .content {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        grid-auto-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-self: stretch;
+            z-index: 2;
+            border-radius: 14px;
+            margin: 20px 10px;
+            box-shadow: 10px 8px 12px 2px rgba(0, 0, 0, 0.85);
+            -webkit-box-shadow: 10px 8px 12px 2px rgba(0, 0, 0, 0.85);
+            -moz-box-shadow: 10px 8px 12px 2px rgba(0, 0, 0, 0.85);
+            border: 1px solid rgba(0, 0, 0, 0.85);
+            text-align: center;
+            padding: 10px 8px;
+            margin-top: 8px;
+            transition: transform 0.5s, box-shadow 0.5s, color 1s, text-shadow 1s;
+            cursor: pointer;
+            
+            .service-button-content {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .label-container {
+                padding: 8px;
+            }
+
+            &:hover {
+                transform: scale(1.05);
+
+                .icon-container {
+                    box-shadow: 0px 0px 10px 9px rgba(227, 27, 27, 0.486);
+                    -webkit-box-shadow: 0px 0px 10px 9px rgba(227, 27, 27, 0.486);
+                    -moz-box-shadow: 0px 0px 10px 9px rgba(227, 27, 27, 0.486);
+                }
+                box-shadow: 0px 0px 10px 9px rgba(121, 121, 121, 0.75);
+                -webkit-box-shadow: 0px 0px 10px 9px rgba(121, 121, 121, 0.75);
+                -moz-box-shadow: 0px 0px 10px 9px rgba(121, 121, 121, 0.75);
+            }
+        }
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .service-details {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        overflow-y: visible;
+        align-items: center;
+        border-radius: 14px;
+        padding: 20px 0px;
+        top: 20px;
+        left: 105px;
+        opacity: 0;
+        background-color: #000000;
+        z-index: 3;
+        transform: translateX(-110%);
+        width: calc(100vw - 140px);
+        height: calc(100vh - 60px);
+        transition: all 0.5s, background-color 0s, box-shadow 0s;
+        border: 1px solid #c4c4c4b3;
+        box-shadow: 0px 0px 10px 4px #c4c4c4b3;
+        -webkit-box-shadow: 0px 0px 10px 4px #c4c4c4b3;
+        -moz-box-shadow: 0px 0px 10px 4px #c4c4c4b3;
+
+        &.active {
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            opacity: 1;
+            transition: all 0.5s, background-color 0s, box-shadow 0s, opacity 0s;
+
+            .icon-container {
+                box-shadow: 0px 0px 10px 9px rgba(227, 27, 27, 0.486);
+                -webkit-box-shadow: 0px 0px 10px 9px rgba(227, 27, 27, 0.486);
+                -moz-box-shadow: 0px 0px 10px 9px rgba(227, 27, 27, 0.486);
+            }
+        }
+
+        .service-content {
+            height: 100%;
+            overflow: scroll;
+            overflow-x: hidden;
+            overflow-y: visible;
+            overscroll-behavior: none;
+            margin-top: 10px;
+            margin: 8px;
+            font-weight: 500;
+
+            &::-webkit-scrollbar {
+                width: 6px; /* width of the entire scrollbar */
+                border-radius: 20px;
+            }
+
+            &::-webkit-scrollbar-track {
+                border-radius: 20px;
+                background: red; /* color of the tracking area */
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: white; /* color of the scroll thumb */
+                border-radius: 20px; /* roundness of the scroll thumb */
+                border: 2px solid red; /* creates padding around scroll thumb */
+            }
+
+            scrollbar-width: thin; /* "auto" or "thin" */
+            scrollbar-color: blue orange; /* scroll thumb and track */
+
+            ul {
+                height: 100%;
+                padding: 0px 30px;
+                overflow-y: visible;
+
+                li {
+                    display: inline-block;
+                    margin: 10px 0px;
+
+                    h6 {
+                        line-height: 22px;
+                        display: inline;
+                        font-weight: 500;
+                        margin: 8px 0px;
+                    }
+                }
+            }
+
+            .service-list-icon {
+                position: relative;
+                top: 4px;
+                margin: 10px 6px 0px 0px;
+                border-radius: 100%;
+                background-color: white;
+                fill: red;
+            }
+        }
+        .description {
+            display: block;
+            padding: 0px 20px;
+            font-weight: 500;
+            margin: 20px 0px;
+        }
+    }
+
+    .close-button {
+        position: absolute;
+        cursor: pointer;
+        right: 20px;
+    }
+
+    .icon-container {
+        height: 70px;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        margin: 0px 0px 20px 0px;
+        box-shadow: 0px 0px 10px 5px (0, 0, 0, 0.85);
+        -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.85);
+        -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.85);
+
+        transition: padding 1s, box-shadow 0.5s;
+        .icon {
+            height: inherit;
+            width: 100%;
+            padding: 12px;
+            color: white;
+            fill: white;
+        }
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .services-section {
+        padding: 40px 5px 40px 100px;        
+    }
+}
