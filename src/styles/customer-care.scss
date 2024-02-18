@@ -1,7 +1,5 @@
 .customer-care-section {
     @extend %layout;
-    min-height: 30vh;
-    max-width: 1920px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,7 +23,6 @@
         }
     }
     .card-header {
-        background: rgb(226, 0, 0);
         background: linear-gradient(180deg, rgba(226, 0, 0, 1) 0%, rgba(36, 36, 36, 1) 96%);
 
         &::before {
@@ -52,13 +49,13 @@
     .card-content {
         display: flex;
         flex-direction: column;
-        color: white;
+       color: $color-main;
         align-items: center;
         width: 80%;
         margin: 0 auto;
     }
     .card-title {
-        color: white;
+       color: $color-main;
         text-align: center;
         text-transform: uppercase;
         font-size: 16px;
@@ -82,9 +79,5 @@
     
     .starLottie {
         transform: scale(2) !important;
-    }
-    
-    @media (max-width: 1024px) {
-        padding: 0px 20px 0px 0px;
     }
 }

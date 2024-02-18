@@ -4,7 +4,6 @@ import useCheckWidthScreen from '../utils/checkScreenSize';
 import logo from '../assets/transperant-logo.png';
 import Link from 'react-scroll/modules/components/Link';
 import { FaCar, FaFacebook } from 'react-icons/fa';
-import { ServiceDetails } from './ServiceDetails';
 export const Navigation = () => {
     const [mobileOpened, setMobileOpened] = useState(false);
 
@@ -61,7 +60,6 @@ export const Navigation = () => {
                     </button>
                 </div>
             </div>
-            {/* <ServiceDetails ref={serviceDetails} {...{ selectedService, isActive, setIsActive }} /> */}
         </nav>
     );
 };

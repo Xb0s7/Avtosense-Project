@@ -4,7 +4,7 @@
 
 .navbar {
     overflow: hidden;
-    height: 95%;
+    height: calc(100% - 50px);
     width: 85px;
     position: fixed;
     display: flex;
@@ -12,7 +12,7 @@
     flex-direction: column;
     align-items: center;
     z-index: 5;
-    top: 2.5%;
+    top: 25px;
     border-radius: 14px;
     left: 20px;
     background: #1e1e1e;
@@ -32,10 +32,10 @@
         margin-bottom: 20px;
         a {
             margin: 0px 8px;
-            color: white;
+           color: $color-main;
             transition: color 0.4s;
             &:hover {
-                color: red;
+                color: $accent-color;;
             }
         }
         .link {
@@ -76,7 +76,7 @@
                 border-radius: 12px;
                 flex-direction: column;
                 cursor: pointer;
-                color: white;
+               color: $color-main;
                 transition: all 0.3s;
                 text-transform: uppercase;
 
@@ -89,7 +89,7 @@
                     justify-content: center;
                     align-items: center;
                     height: 30px;
-                    color: white;
+                   color: $color-main;
                 }
                 .nav-icon {
                     fill: white;
@@ -97,16 +97,16 @@
                 }
 
                 &:hover {
-                    color: red;
+                    color: $accent-color;;
                     .tooltiptext {
-                        background-color: red;
+                        background-color: $accent-color;;
                         border-bottom: 1px solid #231f1e;
                         visibility: visible;
                         opacity: 1;
                     }
                     .nav-icon {
-                        fill: red;
-                        stroke: red;
+                        fill: $accent-color;;
+                        stroke: $accent-color;;
                     }
                 }
                 svg {
@@ -120,7 +120,7 @@
                 background-color: #231f1e00;
                 font-weight: bold;
                 text-transform: uppercase;
-                color: white;
+               color: $color-main;
                 border-bottom: 1px solid #bdbec0;
                 border-radius: 2px;
                 text-align: center;
@@ -133,10 +133,10 @@
         .navigation-link {
             &.active {
                 width: calc(100% + 20px);
-                color: red;
+                color: $accent-color;;
                 .tooltiptext {
                     background-color: rgb(111, 0, 0);
-                    color: white;
+                   color: $color-main;
                     border-bottom: 1px solid #231f1e;
                     visibility: visible;
                     opacity: 1;
@@ -151,15 +151,21 @@
 
 @media only screen and (max-width: 1024px) {
     .section-navigation {
+        position: fixed;
+        z-index: 5;
+        width: 100%;
+        top: 0;
+        height: 100%;
         .navbar {
             width: 100%;
-            display: block;
+            display: flex;
             height: fit-content;
             padding: 0;
             flex-direction: row;
-            background-color: var(--navbar-background-color);
-            backdrop-filter: blur(4px);
-            z-index: 10;
+            position: relative;
+            top: 0;
+            left: 0;
+            border-radius: 0;
 
             .logo-link {
                 display: inline-block;
@@ -189,8 +195,7 @@
                 transform: none;
                 margin-top: 10px;
                 max-height: calc(100vh - 73px);
-                height: calc(100vh - 73px);
-                //transition: 0.3s;
+                height: 100vh;
 
                 li {
                     a {

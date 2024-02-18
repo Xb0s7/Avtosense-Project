@@ -8,13 +8,17 @@ export const Services = () => {
     const [isActive, setIsActive] = useState(false);
     const serviceDetails = useRef();
 
-    const isInitialMount = useRef(true);
-
     useEffect(() => {
-        if (isInitialMount.current) {
-            isInitialMount.current = false;
-        } else if (serviceDetails.current) {
-            serviceDetails.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (serviceDetails.current && isActive) {
+            
+            serviceDetails.current.classList.add('active');
+            const timer = setTimeout(() => {
+                serviceDetails.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 210);
+
+            return () => clearTimeout(timer)
+        } else {
+            serviceDetails.current.classList.remove('active')
         }
     }, [isActive]);
 
@@ -22,10 +26,10 @@ export const Services = () => {
         <div className='services-section'>
             <h3 className='header'>Услуги</h3>
             <div className='content'>
-                {SERVICES_ITEMS.map((item, index) => (
-                    <ServiceCard {...{ item, setSelectedService, setIsActive }} key={index} />
+                {SERVICES_ITEMS.map((item) => (
+                    <ServiceCard {...{ item, setSelectedService, setIsActive }} key={item.id} />
                 ))}
-            <ServiceDetails ref={serviceDetails} {...{ selectedService, isActive, setIsActive }} />
+                <ServiceDetails ref={serviceDetails} {...{ selectedService, isActive, setIsActive, setSelectedService }} />
             </div>
         </div>
     );

@@ -3,11 +3,12 @@
     min-height: 75vh;
     height: 100%;
     display: flex;
-    justify-content: stretch;
     flex-direction: column;
+    justify-content: stretch;
     align-items: center;
-    color: white;
-    
+   color: $color-main;
+    z-index: 2;
+
     h3 {
         margin: 30px 0px;
     }

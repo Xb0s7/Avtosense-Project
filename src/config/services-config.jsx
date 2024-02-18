@@ -8,6 +8,8 @@ import Steering  from '../assets/steering2.svg?react';
 import Exhaust  from '../assets/exhaust.svg?react';
 import Cooling  from '../assets/radiator.svg?react';
 import Turbo  from '../assets/power.svg?react';
+import Insurance  from '../assets/insurance.svg?react';
+import Maintanance  from '../assets/maintanance.svg?react';
 
 export const SERVICES_ITEMS = [
     {
@@ -101,11 +103,11 @@ export const SERVICES_ITEMS = [
     {
         id: 11,
         label: 'Диагностика',
-        icon: () => <Turbo className='icon' />,
+        icon: () => <Insurance className='icon' />,
     },
     {
         id: 12,
         label: 'Инспекция и Проверка',
-        icon: () => <Turbo className='icon' />,
+        icon: () => <Maintanance className='icon' style={{color: '#FFFFFF', fill: "#FFFFFFF"}}/>,
     },
 ];
