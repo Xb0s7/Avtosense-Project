@@ -5,7 +5,7 @@ export const NAVIGATION_ITEMS = [
         label: 'Home',
         tooltip: 'Начало',
         id: 'intro-section',
-        marginHeight: 500,
+        marginHeight: 0,
         icon: () => <FaWarehouse />,
     },
     {

@@ -1,35 +1,38 @@
-import { useEffect, useRef, useState } from 'react';
-import { ServiceCard } from '../components/Service';
-import { ServiceDetails } from '../components/ServiceDetails';
-import { SERVICES_ITEMS } from '../config/services-config';
+import { useContext, useEffect, useRef, useState } from "react";
+import { ServiceCard } from "../components/Service";
+import { ServiceDetails } from "../components/ServiceDetails";
+import { SERVICES_ITEMS } from "../config/services-config";
+import { ServiceContext } from "../context/ServiceContext";
 
 export const Services = () => {
-    const [selectedService, setSelectedService] = useState();
-    const [isActive, setIsActive] = useState(false);
     const serviceDetails = useRef();
+    const { isActive } = useContext(ServiceContext);
+    const [scrollPositionToReturn, setScrollPositionToReturn] = useState(0);
 
     useEffect(() => {
         if (serviceDetails.current && isActive) {
-            
-            serviceDetails.current.classList.add('active');
+            setScrollPositionToReturn(window.scrollY);
+
+            serviceDetails.current.classList.add("active");
             const timer = setTimeout(() => {
-                serviceDetails.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                serviceDetails.current.scrollIntoView({ behavior: "smooth", block: "center" });
             }, 210);
 
-            return () => clearTimeout(timer)
+            return () => clearTimeout(timer);
         } else {
-            serviceDetails.current.classList.remove('active')
+            serviceDetails.current.classList.remove("active");
+            window.scrollTo({top: scrollPositionToReturn, behavior:'smooth'})
         }
     }, [isActive]);
 
     return (
-        <div className='services-section'>
-            <h3 className='header'>Услуги</h3>
-            <div className='content'>
+        <div className="services-section">
+            <h3 className="section-header">Услуги</h3>
+            <div className="content">
                 {SERVICES_ITEMS.map((item) => (
-                    <ServiceCard {...{ item, setSelectedService, setIsActive }} key={item.id} />
+                    <ServiceCard {...{ item }} key={item.id} />
                 ))}
-                <ServiceDetails ref={serviceDetails} {...{ selectedService, isActive, setIsActive, setSelectedService }} />
+                <ServiceDetails ref={serviceDetails} />
             </div>
         </div>
     );

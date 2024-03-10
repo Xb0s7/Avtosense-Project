@@ -1,40 +1,88 @@
 .reviews-section {
     @extend %layout;
-    min-height: 75vh;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
-   color: $color-main;
+    color: $color-main;
     z-index: 2;
 
-    h3 {
-        margin: 30px 0px;
-    }
     .container {
         flex: 1;
         display: flex;
         flex-direction: column;
         width: 100%;
         position: relative;
-        
-        .swiper {
-            background-color: rgba(0, 0, 0, 0.548);
-            width: 100%;
-            height: 100%;
-        }
-        
-        .swiper-container {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            height: 75%;
-            width: 100%;
-        }
-        
-        .swiper-slide {
+
+        .reviews-container {
+            padding: 40px;
+            background-color: $background-color-main;
             border-radius: 14px;
         }
+
+        .swiper {
+            width: 100%;
+            position: unset;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            border-radius: 7px;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: $background-color-secondary;
+            height: unset;
+        }
+
+        .swiper-button-prev {
+            left: 5px;
+            position: absolute;
+            color: $accent-color;
+        }
+        .swiper-button-next {
+            right: 5px;
+            position: absolute;
+            color: $accent-color;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            img {
+                max-width: 45px;
+                margin-right: 20px;
+            }
+        }
+        .reviewer-text {
+            margin: 20px 0px;
+        }
+
+        @media (max-width: 1024px) {
+            .reviews-container {
+                padding: 10px;
+            }
+            .reviewer-text {
+                margin: 20px 0px;
+            }
+        }
+    }
+    .rating {
+        display: flex;
+        align-items: center;
+        span {
+            margin-right: 8px;
+        }
+        .star {
+            max-width: 20px;
+            max-height: 20px;
+            &.filled {
+                fill: yellow
+            }
+        }
+
     }
 }

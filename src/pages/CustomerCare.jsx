@@ -32,8 +32,7 @@ export const CustomerCare = () => {
                 <div className="card-content">
                     <h2 className="card-title">Обслужване</h2>
                     <p className="card-text">
-                        Елате при нас за разнообразие от автомобилни услуги вариращи от обслужване
-                        до тежки ремонти.
+                        Нашите квалифицирани специалисти осигуряват висококачествено обслужване.
                     </p>
                 </div>
             </div>
@@ -68,7 +67,7 @@ export const CustomerCare = () => {
                 <div className="card-content">
                     <h2 className="card-title">Отношение</h2>
                     <p className="card-text">
-                        Ние вярваме в третирането на нашите клиенти с честност, защото бизнеса
+                        Ние ценим вас, нашите клиенти и целим винаги да оставате доволни от нашите услуги.
                     </p>
                 </div>
             </div>

@@ -1,4 +1,9 @@
-export const ServiceCard = ({ item, setSelectedService, setIsActive }) => {
+import { useContext } from "react";
+import { ServiceContext } from "../context/ServiceContext";
+
+export const ServiceCard = ({ item }) => {
+    const { setSelectedService, setIsActive } = useContext(ServiceContext)
+
     const clickHandler = () => {
         setSelectedService({ ...item });
         setIsActive(true);

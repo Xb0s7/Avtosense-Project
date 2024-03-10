@@ -136,7 +136,7 @@
                 color: $accent-color;;
                 .tooltiptext {
                     background-color: rgb(111, 0, 0);
-                   color: $color-main;
+                    color: $color-main;
                     border-bottom: 1px solid #231f1e;
                     visibility: visible;
                     opacity: 1;
@@ -155,7 +155,6 @@
         z-index: 5;
         width: 100%;
         top: 0;
-        height: 100%;
         .navbar {
             width: 100%;
             display: flex;

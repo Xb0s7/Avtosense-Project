@@ -1,8 +1,9 @@
-import { forwardRef, useEffect } from "react";
+import { forwardRef, useContext, useEffect } from "react";
 import { FaCheckCircle, FaTimes } from "react-icons/fa";
+import { ServiceContext } from "../context/ServiceContext";
 
-export const ServiceDetails = forwardRef(({ isActive, selectedService, setSelectedService, setIsActive }, ref) => {
-    
+export const ServiceDetails = forwardRef((props, ref) => {
+    const { isActive, selectedService, setSelectedService, setIsActive } = useContext(ServiceContext);
     return (
         <div className={`service-details`} ref={ref}>
             {selectedService && (
