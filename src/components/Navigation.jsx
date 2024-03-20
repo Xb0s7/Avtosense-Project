@@ -31,12 +31,9 @@ export const Navigation = () => {
                                     smooth={true}
                                     onClick={closeMenuOnClick}
                                     spyThrottle={0}
-
                                 >
                                     <div className="nav-icon-container">{icon()}</div>
-                                    {isBiggerThanTablet && (
-                                        <span className="tooltiptext">{tooltip}</span>
-                                    )}
+                                    <span className="tooltiptext">{tooltip}</span>
                                 </Link>
                             </li>
                         ))}
@@ -51,13 +48,13 @@ export const Navigation = () => {
                         >
                             <FaCar size={20}></FaCar>
                         </a>
+                        <button
+                            className={`hamburger-btn ${mobileOpened ? "opened" : ""}`}
+                            onClick={closeMenuOnClick}
+                        >
+                            <span></span>
+                        </button>
                     </div>
-                    <button
-                        className={`hamburger-btn ${mobileOpened ? "opened" : ""}`}
-                        onClick={closeMenuOnClick}
-                    >
-                        <span></span>
-                    </button>
                 </div>
             </div>
         </nav>
