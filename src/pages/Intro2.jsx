@@ -1,5 +1,4 @@
 import logoTransparent from '../assets/logotransperent.png';
-import building from '../assets/home-background.jpg';
 
 export const Intro2 = () => {
     return (

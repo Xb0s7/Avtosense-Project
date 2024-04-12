@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NAVIGATION_ITEMS } from "../config/navigation-config";
-import useCheckWidthScreen from "../utils/checkScreenSize";
 import logo from "../assets/transperant-logo.png";
 import Link from "react-scroll/modules/components/Link";
 import { FaCar, FaFacebook } from "react-icons/fa";
@@ -12,7 +11,6 @@ export const Navigation = () => {
         setMobileOpened(!mobileOpened);
     };
 
-    const isBiggerThanTablet = useCheckWidthScreen(1024);
     return (
         <nav className="section-navigation">
             <div className="navbar-container">
